@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">                 
+    <style>
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#heading-container{
+    background-color: #232323;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+}
+#heading-container::before{ 
+    content: "";
+    position: absolute;
+    background: url(images/match.png) no-repeat center center/cover;
+    height: 642px;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.6;
+}
+        #heading{
+            margin: 0px;
+            /* border: 4px solid red; */
+            /* background-color: #232323; */
+            color: white;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        #image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 4px solid red; */
+        }
+        img{
+            /* border: 4px solid red; */
+            width: 30%;
+            border-radius: 5px;
+            /* height: 10%; */
+        }
+
+        #score-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 3px solid green; */
+            height: 80px;
+        }
+        #score{
+            border: 2px solid white;
+            border-radius: 5px;
+            width: 30%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Oswald', sans-serif;
+        }
+        /* .score-elements{
+            padding: 40px;
+        } */
+        .players{
+            font-size: 40px;
+            padding: 15px 30px;
+            /* border: 3px solid yellow; */
+        }
+        #to{
+            font-size: 30px;
+        }
+        #info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            font-family: 'Varela Round', sans-serif;
+        }
+        #select{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: bold;
+        }
+        #option{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 2px solid brown; */
+            /* width: 33%; */
+        }
+        .option-element{
+            text-align: center;
+            /* border: 1px solid black; */
+            padding: 15px 15px;
+            margin: 5px 3px;
+            /* width: 33%; */
+            border-radius: 5px;
+            font-family: 'Ropa Sans', sans-serif;
+            font-weight: bolder;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #player1-btn{
+            background-color: greenyellow;
+            width: 33%;
+        }
+        #player2-btn{
+            background-color: blueviolet;
+            width: 33%;
+        }
+        #reset{
+            background-color: #fe1145;
+            width: 33%;
+        }
+        #settings-container{
+            /* border: 3px solid gold; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #settings{
+            border: 2px solid white;
+            border-radius: 5px;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heading -->
+    <div id="heading-container">
+        <h1 id="heading">Ping Pong Score Keeper</h1>
+    </div>
+    <!-- Image -->
+    <div id="image"><img src="images/ping-pong.jpg" alt=""></div>
+    <!-- Scores -->
+    <div id="score-container">
+        <div id="score">
+        <span class="score-elements players"  id="player1-score">0</span>
+        <span class="score-elements" id="to">to</span>
+        <span class="score-elements players"  id="player2-score">0</span>
+    </div>
+    </div>
+    <!-- Settings -->
+    <div id="settings-container">
+    <div id="settings">
+        <!-- Info -->
+<div id="info">
+    Use the buttons below to keep score.
+</div>
+<!-- Rounds -->
+    <div id="select">
+        <form name="form">
+        <label for="round">Playing To:</label>
+            <select name="round" id="round" onchange="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected="selected">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </form>
+    </div>
+<!-- Buttons -->
+    <div id="option">
+        <button class="option-element" id="player1-btn">+1 Player One</button>
+        <button class="option-element" id="player2-btn">+1 Player Two</button>
+        <button class="option-element" id="reset">Reset</button>  
+    </div>
+</div>
+</div>
+
+<script>
+    // Buttons
+    let player1btn=document.getElementById("player1-btn");
+    let player2btn=document.getElementById("player2-btn");
+    let resetbtn=document.getElementById("reset");
+
+    // Scores
+    let player1score=document.getElementById("player1-score");
+    let player2score=document.getElementById("player2-score");
+
+    // Score counter
+    let counter1=0;
+    let counter2=0;
+
+    // Getting the no of rounds
+    let roundnumbers;
+    roundnumbers=form.round[form.round.selectedIndex].value;
+    // console.log("Hello");
+    // console.log(roundnumbers);
+    
+
+    // Event Listener for Player 1 btn
+    player1btn.addEventListener("click",function(){
+        counter1++;
+
+        if(counter1!=roundnumbers){
+            player1score.textContent=counter1;
+        }
+        // else if(counter1==roundnumbers){
+        //     player1score.textContent=counter1;
+        //     player1score.style.color="green";
+        //     player2score.style.color="red";
+
+        //     // Disabling btns
+        //     player1btn.disabled=true;
+        //     player2btn.disabled=true;
+        // }
+        else{
+            player1score.textContent=counter1;
+            player1score.style.color="green";
+            player2score.style.color="red";
+            // Disabling btns
+            player1btn.disabled=true;
+            player2btn.disabled=true;
+        }
+    });
+    
+    // Event Listener for Player 2 btn
+    player2btn.addEventListener("click",function(){
+        counter2++;
+        
+        if(counter2!=roundnumbers){
+            player2score.textContent=counter2;
+        }
+        else{
+            player2score.textContent=counter2;
+            player2score.style.color="green";
+            player1score.style.color="red";
+
+            // Disabling btns
+            player1btn.disabled=true;
+            player2btn.disabled=true;
+        }
+    });
+
+    // Event Listener for reset btn
+    resetbtn.addEventListener("click",function(){
+        counter1=0;
+        counter2=0;
+        player1score.textContent=counter1;
+        player1score.style.color="black";
+        player2score.textContent=counter2;
+        player2score.style.color="black";
+        player1btn.disabled=false;
+        player2btn.disabled=false;
+    });
+
+</script>
+</body>
+</html>
