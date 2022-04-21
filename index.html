@@ -215,11 +215,15 @@ body{
 
     // Getting the no of rounds
     let roundnumbers;
-    roundnumbers=form.round[form.round.selectedIndex].value;
+
+    let roundElement= document.getElementById("round");
+    roundElement.addEventListener("change",function(){
+        roundnumbers=roundElement.value;
+    })
+    
     // console.log("Hello");
     // console.log(roundnumbers);
     
-
     // Event Listener for Player 1 btn
     player1btn.addEventListener("click",function(){
         counter1++;
