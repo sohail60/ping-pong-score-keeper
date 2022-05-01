@@ -214,16 +214,22 @@ body{
     let counter2=0;
 
     // Getting the no of rounds
-    let roundnumbers;
-
+    // let roundnumbers;
+    
     let roundElement= document.getElementById("round");
+    let roundnumbers=roundElement.value;
     roundElement.addEventListener("change",function(){
+        counter1=0;
+        counter2=0;
+        player1score.textContent=counter1;
+        player2score.textContent=counter2;
+        player1score.style.color="black";
+        player2score.style.color="black";
+        player1btn.disabled=false;
+        player2btn.disabled=false;
         roundnumbers=roundElement.value;
-    })
-    
-    // console.log("Hello");
-    // console.log(roundnumbers);
-    
+    });
+
     // Event Listener for Player 1 btn
     player1btn.addEventListener("click",function(){
         counter1++;
